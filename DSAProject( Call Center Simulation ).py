@@ -16,7 +16,8 @@ class CallCenter:
     def __init__(self, env, no_of_operator, support_time):
         
         self.env = env
-        self.no_of_operator = simpy.Resource(env, no_of_operator) # Limited no. of staff exist so it is a resource that can be used only when its available
+        self.no_of_operator = simpy.Resource(env, no_of_operator) 
+        # Limited no. of staff exist so it is a resource that can be used only when its available
         self.support_time = support_time
     
     
@@ -35,7 +36,8 @@ def Customer(env, customer_no, call_center):
     print(f"Customer {customer_no} enters waiting queue at {env.now:.2f} mins from start of simulation.\n")
     
     with call_center.no_of_operator.request() as reqst: # Requests resource (an operator) from the class CallCenter
-        yield reqst # Pauses execution of function (generator) until requested resource becomes available
+        yield reqst 
+        # Pauses execution of function (generator) until requested resource becomes available
         
         print(f'Customer {customer_no} has entered the call at {env.now:.2f} mins from start of simulation.\n')
         yield env.process(call_center.Support(customer_no)) # Runs Support function as a process in the simulation
@@ -61,6 +63,7 @@ def Setup(env, no_of_operator, support_time, customer_interval):
 print('Initiating Call Center Simulation: \n')
 
 env.process(Setup(env, No_of_Operator, Average_Support_Time, Customer_Interval)) # Calling Setup as a process in the simulation environment 
-env.run(until=Sim_Time) # Run time of simulation provided
+env.run(until=Sim_Time) 
+# Run time of simulation provided
  
 print(f'\nNumber of customer that were handled is {No_of_Customers_Handled}.')      
