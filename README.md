@@ -1,3 +1,4 @@
 This is a Call Center Simulation Project done using Python's Simpy library in conjuction with Random and Numpy libraries.
-The project is based on the general operation of an actual call center i.e customer waits in queue to enter call, enter the call, gets support and it finishes in some time, customer leaves the call.
-These 4 criteria need to be fulfilled for a customer to be considered handled by the Call Center Simulation.
+The project is based on the general operation of an actual call center i.e 1. Customer waits in queue to enter call, 2. Enters the call, 3. Gets support and it finishes in some time, 4. Customer leaves the call.
+These 4 criteria need to be fulfilled for a customer to be considered handled by the Call Center
+Simulation. Additionally, in the source code (.py file), the working of certain code segments/functions as well as other required form of documentation is present in form of comments. Likewise, with the use of Pyscript, the main code file (.py) was linked to a HTML file. This was done to observe the output of the .py file on a webpage by the use of a live server (search and download Live Server extension in VS Code or other IDE). 
